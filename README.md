@@ -1,6 +1,4 @@
-# recommender_transformer
-
-Blog : https://towardsdatascience.com/build-your-own-movie-recommender-system-using-bert4rec-92e4e34938c5 
+# recommender_movies
 
 ### Setup (GPU)
 ```
@@ -13,13 +11,10 @@ git clone https://github.com/CVxTz/recommender_transformer
 cd recommender_transformer
 pip install .
 ```
-### Docker (CPU)
-```bash
-docker build . -t recommender
-docker run recommender sh -c "python3.8 -m pytest"
-```
 
 ### References
 
+Blog : https://towardsdatascience.com/build-your-own-movie-recommender-system-using-bert4rec-92e4e34938c5 
+[Github CVxTz/recommender_transformer](https://github.com/CVxTz/recommender_transformer)
 [BERT4Rec: Sequential Recommendation with Bidirectional
 Encoder Representations from Transformer](https://arxiv.org/abs/1904.06690)

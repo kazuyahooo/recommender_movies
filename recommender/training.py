@@ -64,8 +64,8 @@ def train(
     data_csv_path: str,
     log_dir: str = "recommender_logs",
     model_dir: str = "recommender_models",
-    batch_size: int = 32,
-    epochs: int = 2000,
+    batch_size: int = 16, #32
+    epochs: int = 20, # 2000
     history_size: int = 120,
 ):
     data = pd.read_csv(data_csv_path)
@@ -97,13 +97,13 @@ def train(
     train_loader = DataLoader(
         train_data,
         batch_size=batch_size,
-        num_workers=10,
+        num_workers=2, # 10
         shuffle=True,
     )
     val_loader = DataLoader(
         val_data,
         batch_size=batch_size,
-        num_workers=10,
+        num_workers=2, # 10
         shuffle=False,
     )
 
@@ -153,6 +153,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     train(
-        data_csv_path=args.data_csv_path,
+        # data_csv_path=args.data_csv_path,
+        data_csv_path = '../ratings.csv',
         epochs=args.epochs,
     )
