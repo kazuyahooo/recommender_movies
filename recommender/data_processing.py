@@ -15,7 +15,8 @@ def map_column(df: pd.DataFrame, col_name: str):
     :return:
     """
     values = sorted(list(df[col_name].unique()))
-    mapping = {k: i + 2 for i, k in enumerate(values)}
+    # mapping = {k: i + 2 for i, k in enumerate(values)}
+    mapping = {k: i  for i, k in enumerate(values)}
     inverse_mapping = {v: k for k, v in mapping.items()}
 
     df[col_name + "_mapped"] = df[col_name].map(mapping)
@@ -34,7 +35,10 @@ def get_context(df: pd.DataFrame, split: str, context_size: int = 120, val_conte
     :return:
     """
     if split == "train":
-        end_index = random.randint(10, df.shape[0] - val_context_size)
+        if df.shape[0] - val_context_size >= 10:
+            end_index = random.randint(10, df.shape[0] - val_context_size)
+        else:
+            end_index = df.shape[0]
     elif split in ["val", "test"]:
         end_index = df.shape[0]
     else:
