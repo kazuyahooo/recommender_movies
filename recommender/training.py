@@ -109,8 +109,7 @@ def train(
     )
 
     model = Recommender(
-        # vocab_size=len(mapping) + 2, # 電影數量 + 2
-        vocab_size = len(movies),
+        vocab_size = len(movies) + 2,
         lr=1e-4,
         dropout=0.3,
     )
