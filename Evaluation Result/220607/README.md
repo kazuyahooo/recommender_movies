@@ -2,7 +2,7 @@ Add Precision@k, Recall@k, F1-score@k
 
 disney_data.ipynb: disney dataset without dropped
 
-disney_drop.ipynb: disney dataset dropped
+disney_data_drop.ipynb: disney dataset dropped
 
 netflix_25M.ipynb: netflix dataset without dropped
 
